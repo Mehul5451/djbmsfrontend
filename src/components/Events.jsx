@@ -10,7 +10,7 @@ const EventPage = () => {
   useEffect(() => {
     const fetchEventData = async () => {  
       try {
-        const response = await axios.get("http://localhost:5000/events"); // Ensure this route is correct
+        const response = await axios.get("https://userbackend-bdc2.onrender.com/events"); // Ensure this route is correct
         if (response.data.length > 0) {
           setEvent(response.data[0]); // Assuming you're fetching a list of events, pick the first one
         } else {
@@ -40,7 +40,7 @@ const EventPage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/book-tickets",
+        "https://userbackend-bdc2.onrender.com/book-tickets",
         {
           eventId: event._id,
           ticketType: ticket.ticketType, // Ensure the ticket object has a "type" field
